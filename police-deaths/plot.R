@@ -27,6 +27,7 @@ large_categories <- persons_data %>%
 # Categories to plot 
 cat_to_plot <- c(large_categories$cause_short, "Gunfire (Accidental)")
 
+# Create plot order
 plot_order <- persons_data %>%
     mutate(cat = ifelse(cause_short %in% cat_to_plot, cause_short, 'other')) %>%
     group_by(cat) %>%
